@@ -129,9 +129,9 @@ module.exports = {
       if (author && author !== 'Unknown') {
         caption += `👤 Author: ${author}\n`;
       }
-      caption += `\n*Downloaded by ${config.botName}*`;
+      caption += `\nEnjoy your download — hope you like it!`;
       
-      // Send only the main media (not thumbnail separately to avoid duplicates)
+      // Send only the main media (not thumbnail separately to avoid duplicates)`},{
       if (isVideo) {
         // Download video as buffer (Pinterest tokenized URLs need to be downloaded)
         try {

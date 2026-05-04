@@ -4,19 +4,19 @@
 
 module.exports = {
     // Bot Owner Configuration
-    ownerNumber: ['91xxxxxxxxxxx','917023951514'], // Add your number without + or spaces (e.g., 919876543210)
+    ownerNumber: ['91xxxxxxxxxxx','918638859443'], // Add your number without + or spaces (e.g., 919876543210)
     ownerName: ['Knight Bot Mini', 'Professor'], // Owner names corresponding to ownerNumber array
     
     // Bot Configuration
-    botName: 'Knight Bot Mini',
-    prefix: '.',
+    botName: 'Your Assistant',
+    prefix: 'uwu',
     sessionName: 'session',
     sessionID: process.env.SESSION_ID || '',
     newsletterJid: '120363161513685998@newsletter', // Newsletter JID for menu forwarding
     updateZipUrl: 'https://github.com/mruniquehacker/KnightBot-Mini/archive/refs/heads/main.zip', // URL to latest code zip for .update command
     
     // Sticker Configuration
-    packname: 'Knight Bot Mini',
+    packname: 'Your Assistant',
     
     // Bot Behavior
     selfMode: false, // Private mode - only owner can use commands
@@ -41,9 +41,9 @@ module.exports = {
       antigroupmention: false, // Anti-group mention feature
       antigroupmentionAction: 'delete', // 'delete', 'kick'
       welcome: false,
-      welcomeMessage: '╭╼━≪•𝙽𝙴𝚆 𝙼𝙴𝙼𝙱𝙴𝚁•≫━╾╮\n┃𝚆𝙴𝙻𝙲𝙾𝙼𝙴: @user 👋\n┃Member count: #memberCount\n┃𝚃𝙸𝙼𝙴: time⏰\n╰━━━━━━━━━━━━━━━╯\n\n*@user* Welcome to *@group*! 🎉\n*Group 𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝚃𝙸𝙾𝙽*\ngroupDesc\n\n> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ botName*',
+      welcomeMessage: 'Hey @user 👋\nWelcome to *@group*! I’m really glad you joined.\n\nIf you need anything, just say hi and I’ll help.\n',
       goodbye: false,
-      goodbyeMessage: 'Goodbye @user 👋 We will never miss you!',
+      goodbyeMessage: 'Bye @user! Take care and drop by anytime.',
       antiSpam: false,
       antidelete: false,
       nsfw: false,
@@ -62,15 +62,15 @@ module.exports = {
     
     // Message Configuration
     messages: {
-      wait: '⏳ Please wait...',
-      success: '✅ Success!',
-      error: '❌ Error occurred!',
-      ownerOnly: '👑 This command is only for bot owner!',
-      adminOnly: '🛡️ This command is only for group admins!',
-      groupOnly: '👥 This command can only be used in groups!',
-      privateOnly: '💬 This command can only be used in private chat!',
-      botAdminNeeded: '🤖 Bot needs to be admin to execute this command!',
-      invalidCommand: '❓ Invalid command! Type .menu for help'
+      wait: '⏳ Hold on, I’m working on that for you...',
+      success: '✅ Got it. That worked!',
+      error: '❌ Oops, something went wrong. Please try again in a moment.',
+      ownerOnly: '👑 Sorry, only the bot owner can use that command.',
+      adminOnly: '🛡️ That one is reserved for group admins.',
+      groupOnly: '👥 This command only works inside a group.',
+      privateOnly: '💬 Please use this command in a private chat.',
+      botAdminNeeded: '🤖 I need admin rights to do that here.',
+      invalidCommand: '❓ I didn’t understand that. Try .menu if you need help.'
     },
     
     // Timezone

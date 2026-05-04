@@ -100,12 +100,12 @@ module.exports = {
                   await sock.sendMessage(msg.key.remoteJid, {
                     video: { url: mediaUrl },
                     mimetype: 'video/mp4',
-                    caption: `*DOWNLOADED BY ${config.botName.toUpperCase()}*`
+                    caption: `Your download is ready. Enjoy!`
                   }, { quoted: msg });
                 } else {
                   await sock.sendMessage(msg.key.remoteJid, {
                     image: { url: mediaUrl },
-                    caption: `*DOWNLOADED BY ${config.botName.toUpperCase()}*`
+                    caption: `Your download is ready. Enjoy!`
                   }, { quoted: msg });
                 }
               }
@@ -140,8 +140,7 @@ module.exports = {
               throw new Error('Video buffer is empty');
             }
             
-            const botName = config.botName.toUpperCase();
-            const caption = title ? `*DOWNLOADED BY ${botName}*\n\n📝 Title: ${title}` : `*DOWNLOADED BY ${botName}*`;
+            const caption = title ? `Your video is ready — ${title}` : 'Your video is ready. Enjoy!';
             
             await sock.sendMessage(msg.key.remoteJid, {
               video: videoBuffer,
@@ -154,8 +153,7 @@ module.exports = {
             console.error(`Failed to download video: ${downloadError.message}`);
             // Fallback to URL method
             try {
-              const botName = config.botName.toUpperCase();
-              const caption = title ? `*DOWNLOADED BY ${botName}*\n\n📝 Title: ${title}` : `*DOWNLOADED BY ${botName}*`;
+              const caption = title ? `Your video is ready — ${title}` : 'Your video is ready. Enjoy!';
               
               await sock.sendMessage(msg.key.remoteJid, {
                 video: { url: videoUrl },

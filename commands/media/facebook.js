@@ -99,8 +99,7 @@ module.exports = {
         }
         
         // Build caption with video info
-        const botName = config.botName.toUpperCase();
-        let caption = `*DOWNLOADED BY ${botName}*`;
+        const caption = 'Here you go! Your video is ready. Enjoy!';
         
         const parts = [];
         

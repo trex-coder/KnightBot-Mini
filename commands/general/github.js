@@ -34,27 +34,15 @@ module.exports = {
                 
                 const repo = response.data;
                 
-                // Format the response with proper styling
-                let message = `╭━━『 *GitHub Repository* 』━━╮\n\n`;
-                message += `🤖 *Bot Name:* ${config.botName}\n`;
-                message += `🔗 *Repository:* ${repo.name}\n`;
-                message += `👨‍💻 *Owner:* ${repo.owner.login}\n`;
-                message += `📄 *Description:* ${repo.description || 'No description provided'}\n`;
-                message += `🌐 *URL:* ${repo.html_url}\n\n`;
-                
-                message += `📊 *Repository Statistics*\n`;
-                message += `⭐ *Stars:* ${repo.stargazers_count.toLocaleString()}\n`;
-                message += `🍴 *Forks:* ${repo.forks_count.toLocaleString()}\n`;
-                message += `👁️ *Watchers:* ${repo.watchers_count.toLocaleString()}\n`;
-                message += `📦 *Size:* ${(repo.size / 1024).toFixed(2)} MB\n\n`;
-                
-                message += `🔗 *Quick Links*\n`;
-                message += `⭐ Star: ${repo.html_url}/stargazers\n`;
-                message += `🍴 Fork: ${repo.html_url}/fork\n`;
-                message += `📥 Clone: git clone ${repo.clone_url}\n\n`;
-                
-                message += `╰━━━━━━━━━━━━━━━╯\n\n`;
-                message += `> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ${config.botName}*`;
+                // Format the response with a human touch
+                let message = `Hey there! I found the GitHub repository for this assistant.\n\n`;
+                message += `• Repository: ${repo.html_url}\n`;
+                message += `• Description: ${repo.description || 'No description available'}\n`;
+                message += `• Maintainer: ${repo.owner.login}\n`;
+                message += `• Stars: ${repo.stargazers_count.toLocaleString()}\n`;
+                message += `• Forks: ${repo.forks_count.toLocaleString()}\n`;
+                message += `• Watchers: ${repo.watchers_count.toLocaleString()}\n\n`;
+                message += `If you want, I can also share other commands or details.`;
                 
                 // Edit the loading message with the actual data
                 await sock.sendMessage(chatId, {
@@ -67,14 +55,10 @@ module.exports = {
                 console.error('GitHub API Error:', apiError.message);
                 
                 let fallbackMessage = `╭━━『 *GitHub Repository* 』━━╮\n\n`;
-                fallbackMessage += `🤖 *Bot Name:* ${config.botName}\n`;
-                fallbackMessage += `🔗 *Repository:* KnightBot-Mini\n`;
-                fallbackMessage += `👨‍💻 *Owner:* mruniquehacker\n`;
-                fallbackMessage += `🌐 *URL:* ${repoUrl}\n\n`;
-                fallbackMessage += `⚠️ *Note:* Unable to fetch real-time statistics.\n`;
-                fallbackMessage += `Please visit the repository directly for latest stats.\n\n`;
-                fallbackMessage += `╰━━━━━━━━━━━━━━━╯\n\n`;
-                fallbackMessage += `> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ${config.botName}*`;
+                fallbackMessage += `Hey, I couldn’t fetch the live stats just now, but here’s the repo info I could get.\n\n`;
+                fallbackMessage += `• Repository: ${repoUrl}\n`;
+                fallbackMessage += `• Owner: mruniquehacker\n`;
+                fallbackMessage += `\nFeel free to visit the link for the latest details.`;
                 
                 await sock.sendMessage(chatId, {
                     text: fallbackMessage,
